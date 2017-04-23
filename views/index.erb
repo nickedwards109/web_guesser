@@ -2,22 +2,7 @@
   <head></head>
   <body>
     <p>
-      <% if !params["guess"] %>
-         Please guess a number between 0 and 100.
-      <% elsif params["guess"] && params["guess"].to_i == secret_number %>
-         You guessed correctly!
-         The secret number was <%= secret_number %>.
-      <% elsif params["guess"] && params["guess"].to_i > secret_number && %>
-      <% params["guess"].to_i <= secret_number  + 5%>
-         You guessed too high, but you are close! Please try again!
-     <% elsif params["guess"] && params["guess"].to_i < secret_number && %>
-     <% params["guess"].to_i >= secret_number - 5 %>
-        You guessed too low, but you are close! Please try again!
-      <% elsif params["guess"] && params["guess"].to_i > secret_number + 5 %>
-         You guessed way too high. Please try again.
-       <% elsif params["guess"] && params["guess"].to_i < secret_number - 5 %>
-          You guessed way too low. Please try again.
-      <% end %>
+    <%= message %>
     </p>
     <form>
       <input type="text" name="guess">
